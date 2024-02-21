@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Greeting">
+
+        <div style="color: white; background: black; border: red">Hello {greetingMsg}</div>
+        
+        <lightning-input placeholder="Enter Name" onchange={GreetingHandler} ></lightning-input>
+
+    </lightning-card>
+    <lightning-input type="checkbox"  label="Check to show Acc.... Balance" onchange={checkBoxHandler}></lightning-input>
+
+    <template if:true={showDiv}>
+        <div>HDFC - 1.5 Cr</div>
+        <div>ICICI - 1.5 Rs</div>
+    </template>
+
+    <template iterator:it={cityList}>
+        <p key={it.value}>{it.value}</p>
+    </template>
+    
+</template>
