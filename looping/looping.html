@@ -1,35 +1,36 @@
+<!-- i have used <ul> inside the loop. Ideally we should not use the ul inside the loop.  -->
 <template>
-<lightning-card title="Looping----" variant="base">
-<div class="slds-var-m-around-medium" title="For Each">
-<ul class="slds-has-dividers_around-space">
-<template for:each={carsList} for:item="car">
-<li class="slds-item" key={car}> {car}</li>
-</template>
-</ul>
-</div>
-<div title="Iterator" class="slds-var-m-around=large">
+    <lightning-card title="Looping----" variant="base">
+        <div class="slds-var-m-around-medium" title="For Each">
+            <ul class="slds-has-dividers_around-space">
+                <template for:each={carsList} for:item="car">
+                    <li class="slds-item" key={car}> {car}</li>
+                </template>
+            </ul>
+        </div>
+        <div title="Iterator" class="slds-var-m-around=large">
 
-<template iterator:car ={cars} >
-<div key={car.value.color}>
+            <template iterator:car={cars}>
+                <div key={car.value.color}>
 
-<div if:true={car.first}>
-<strong>---List of Cars---</strong>
-</div>
-<div>
-<ul class="slds-has-dividers_bottom">
-<li class="slds-item">type : {car.value.type}</li>
-<li class="slds-item">Reg : {car.value.registration}</li>
-<li class="slds-item">Capacity : {car.value.capacity}</li>
-</ul>
-</div>
-<div if:true={car.last}>
-<strong>Thank You</strong>
-</div>
+                    <div if:true={car.first}>
+                        <strong>---List of Cars---</strong>
+                    </div>
+                    <div>
+                        <ul class="slds-has-dividers_bottom">
+                            <li class="slds-item">type : {car.value.type}</li>
+                            <li class="slds-item">Reg : {car.value.registration}</li>
+                            <li class="slds-item">Capacity : {car.value.capacity}</li>
+                        </ul>
+                    </div>
+                    <div if:true={car.last}>
+                        <strong>Thank You</strong>
+                    </div>
 
-</div>
-</template>
+                </div>
+            </template>
 
-</div>
-</lightning-card>
+        </div>
+    </lightning-card>
 
 </template>
