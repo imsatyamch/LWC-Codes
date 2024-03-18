@@ -1,0 +1,43 @@
+<template>
+    <!-- Record creation form -->
+    <lightning-card title="Create Record Form">
+        <lightning-record-form
+          object-api-name={objectName}
+          fields={fieldList}
+          onsuccess={successHandler}
+          >
+    </lightning-record-form>
+    </lightning-card>
+<!-- View only with record from -->
+    <lightning-card title="View Record Form">
+        <lightning-record-form
+          record-id={recordId}
+          object-api-name={objectApiName}
+          fields={fieldList}
+          >
+    </lightning-record-form>
+    </lightning-card>
+<!-- Read only Component with Record form -->
+    <lightning-card title="Read Only Record Form">
+        <lightning-record-form
+          record-id={recordId}
+          object-api-name={objectApiName}
+          fields={fieldList}
+          mode="readonly"
+          columns="2"
+          >
+    </lightning-record-form>
+    </lightning-card>
+    <!-- Edit form with Record form -->
+    <lightning-card title="Edit Record Form">
+        <lightning-record-form
+          record-id={recordId}
+          object-api-name={objectApiName}
+          fields={fieldList}
+          mode="edit"
+          columns="2"
+          >
+    </lightning-record-form>
+    </lightning-card>
+    
+</template>
